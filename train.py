@@ -209,22 +209,22 @@ def train_and_eval(epoch):
             
             # logging("id: %2d, model time: %6.3f \n" % ((i + 1), time.time()-times))
             
-            # losses =(loss+sum(sloss)+sum(vloss))/(num+snum+vnum)
-            # losses=losses/src1.shape[1]
-            # total_lossl.append(loss.data/num)
-            # total_slossl.append(sum(sloss).data/snum) 
-            # total_vlossl.append(sum(vloss).data/vnum) 
+            losses =(loss+sum(sloss)+sum(vloss))/(num+snum+vnum)
+            losses=losses/src1.shape[1]
+            total_lossl.append(loss.data/num)
+            total_slossl.append(sum(sloss).data/snum) 
+            total_vlossl.append(sum(vloss).data/vnum) 
             
             # print(loss.device)
-            sloss = torch.tensor(sloss)
-            vloss = torch.tensor(vloss)
+            # sloss = torch.tensor(sloss)
+            # vloss = torch.tensor(vloss)
             
             
-            losses =(loss+torch.sum(sloss)+torch.sum(vloss))/(num+snum+vnum)
-            losses=losses/src1.shape[1]
-            total_lossl.append(loss/num)
-            total_slossl.append(torch.sum(sloss)/snum)
-            total_vlossl.append(torch.sum(vloss)/vnum) 
+            # losses =(loss+torch.sum(sloss)+torch.sum(vloss))/(num+snum+vnum)
+            # losses=losses/src1.shape[1]
+            # total_lossl.append(loss/num)
+            # total_slossl.append(torch.sum(sloss)/snum)
+            # total_vlossl.append(torch.sum(vloss)/vnum) 
             
             # losses =(loss+torch.sum(torch.tensor(sloss))+torch.sum(torch.tensor(vloss)))/(num+snum+vnum)
             # losses=losses/src1.shape[1]
