@@ -5,6 +5,13 @@ Our project is based on the PyTorch implementation [[Github]](https://github.com
 
 ***************************************************************
 
+## Installation
+```
+pip install -r requirements.txt
+```
+
+***************************************************************
+
 ## Usage
 ```
 bash run.sh

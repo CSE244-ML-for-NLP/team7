@@ -17,7 +17,7 @@ for i in range(len(tgtD)):
     if i > len(tgtD)-5:
         print(label)
         print(x1)
-    encoded_layers, _ =bmodel(torch.LongTensor(x1).cuda().unsqueeze(0),token_type_ids=None, attention_mask=None)   
+    encoded_layers=bmodel(torch.LongTensor(x1).cuda().unsqueeze(0), attention_mask=None)   
     x=torch.stack(encoded_layers,-1).mean(-1).mean(-2)
     emb.append(x.detach().cpu())
 x=torch.cat(emb,0)
