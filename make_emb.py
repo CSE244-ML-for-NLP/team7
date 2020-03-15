@@ -1,10 +1,10 @@
 import torch
 from convert_mw import bert,tokenizer,bert_type
-from pytorch_pretrained_bert import BertModel
+from transformers import DistilBertModel
 torch.cuda.set_device(0)
 torch.cuda.manual_seed(1234)
 torch.manual_seed(1234)
-bmodel = BertModel.from_pretrained(bert_type)
+bmodel = DistilBertModel.from_pretrained(bert_type)
 bmodel.eval()
 bmodel.to('cuda')
 
